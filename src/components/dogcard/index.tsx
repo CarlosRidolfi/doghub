@@ -30,14 +30,14 @@ const DogCard: React.FC<DogCardProps> = ({
     heightimperial,
     heightmetric,
 }) => {
-    const [items, setItems] = useState<string[]>(() => {
+    const [items, setItems] = useState<any>(() => {
         const storedItems = localStorage.getItem('myItemsKey');
         return storedItems ? JSON.parse(storedItems) : [];
     });
 
     const handleSaveData = () => {
         const dataToSave = [dogBreed, dogImage, id];
-        const isDuplicate = items.some((item) => JSON.stringify(item) === JSON.stringify(dataToSave));
+        const isDuplicate = items.some((item: any) => JSON.stringify(item) === JSON.stringify(dataToSave));
 
         localStorage.setItem('Dog ' + id, `{"breed": "${dogBreed}", "image": "${dogImage}", "id": "${id}"}`)
 
