@@ -16,8 +16,8 @@ const AdoptCard: React.FC<AdoptCard> = ({deleteFunction, adoptImage, adoptName, 
             <Image 
                 src={adoptImage}
                 alt={adoptName}
-                width={80}
-                height={80}
+                width={100}
+                height={100}
             />
             <AdoptCardTitle>{adoptName}</AdoptCardTitle>
             <DeleteButton onClick={deleteFunction}><CloseIcon sx={{ fontSize: 25, color: '#a5a2a2' }} /></DeleteButton>
