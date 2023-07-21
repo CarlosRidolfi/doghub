@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useEffect, useState } from 'react'
 import DogCard from '../dogcard'
 import Dog from '../../../public/images/16.jpg'
