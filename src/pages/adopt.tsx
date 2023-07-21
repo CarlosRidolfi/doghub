@@ -8,6 +8,7 @@ interface AdoptDog {
     id: number;
     adoptBreed: any;
     adoptImage: any;
+    index: number;
 }
 
 export default function Adopt() {

@@ -4,10 +4,10 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardTitle, ButtonsWrapper, CardButton, DogDetailsList, AdoptButton, CardContainer } from './style';
 
 interface DogCardProps {
-    id: number;
+    id?: number;
     dogImage: string;
     dogBreed: string;
-    dogCaracteristics?: string[];
+    dogCaracteristics?: any;
     life_span?: string;
     bred_for?: string;
     breed_group?: string;
@@ -55,7 +55,7 @@ const DogCard: React.FC<DogCardProps> = ({
                 <CardTitle>{dogBreed}</CardTitle>
                 <ButtonsWrapper>
                     {
-                        dogCaracteristics?.map((item: string, index) => (
+                        dogCaracteristics?.map((item: string, index: number) => (
                             <CardButton key={index}>{item}</CardButton>
                         ))
                     }
