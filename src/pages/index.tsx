@@ -1,11 +1,11 @@
 import React from 'react'
 import DogList from '@/components/doglist'
-import Controller from '@/app/controller'
+import Layout from '@/app/layout'
 
 export default function Home() {
   return (
-    <Controller>
+    <Layout>
       <DogList />
-    </Controller>
+    </Layout>
   )
 }

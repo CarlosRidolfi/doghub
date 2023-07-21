@@ -1,13 +1,10 @@
+import Navbar from '@/components/navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'DogHub',
-  description: 'Desafio da empresa HomeHub',
-}
 
 export default function Layout({
   children,
@@ -15,8 +12,12 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
+    <div lang='en'>
+      <Head>
+        <title>DogHub</title>
+      </Head>
+      <Navbar />
       {children}
-    </html>
+    </div>
   )
 }
