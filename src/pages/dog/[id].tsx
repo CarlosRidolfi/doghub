@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-import Layout from '@/app/layout';
+import Controller from '@/app/controller';
 import DogCard from '@/components/dogcard';
 import styled from 'styled-components'
 import { DogListTitle } from '@/components/doglist/style';
@@ -52,7 +52,7 @@ const DogDetails: React.FC = () => {
     }, [id]);
 
     return (
-        <Layout>
+        <Controller>
             <DogDetailsWrapper>
                 <DogListTitle>Detalhes</DogListTitle>
                 {dog &&
@@ -71,7 +71,7 @@ const DogDetails: React.FC = () => {
                     />
                 }
             </DogDetailsWrapper>
-        </Layout>
+        </Controller>
     );
 };
 

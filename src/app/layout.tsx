@@ -1,4 +1,3 @@
-import Navbar from '@/components/navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -16,9 +15,8 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <div>
-      <Navbar />
+    <html lang='en'>
       {children}
-    </div>
+    </html>
   )
 }
