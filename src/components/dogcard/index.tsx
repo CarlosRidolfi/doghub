@@ -36,7 +36,7 @@ const DogCard: React.FC<DogCardProps> = ({
     });
 
     const handleSaveData = () => {
-        const dataToSave = [dogBreed, dogImage, id];
+        const dataToSave = {breed: dogBreed, image: dogImage, id: id};
         const isDuplicate = items.some((item: any) => JSON.stringify(item) === JSON.stringify(dataToSave));
 
         localStorage.setItem('Dog ' + id, `{"breed": "${dogBreed}", "image": "${dogImage}", "id": "${id}"}`)

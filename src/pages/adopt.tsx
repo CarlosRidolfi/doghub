@@ -6,8 +6,10 @@ import { DogListTitle } from '@/components/doglist/style';
 
 interface AdoptDog {
     id: number;
-    adoptBreed: any;
-    adoptImage: any;
+    adoptBreed?: any;
+    adoptImage?: any;
+    image?: any;
+    breed?: any;
     index: number;
 }
 
@@ -34,13 +36,14 @@ export default function Adopt() {
 
         localStorage.setItem('myItemsKey', JSON.stringify(updatedAdoptDogs));
     }
+    console.log(adoptDogs)
 
     return (
         <Layout>
             <AdoptList>
                 <DogListTitle>Sua lista de adoção</DogListTitle>
                 {adoptDogs.map((dog, index) => (
-                    <AdoptCard deleteFunction={() => deleteFunction(index)} key={index} adoptImage={dog[1]} adoptName={dog[0]} />
+                    <AdoptCard deleteFunction={() => deleteFunction(index)} key={index} adoptImage={dog.image} adoptName={dog.breed} />
                 ))}
             </AdoptList>
         </Layout>

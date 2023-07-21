@@ -3,14 +3,14 @@ import Image from 'next/image'
 import CloseIcon from '@mui/icons-material/Close';
 import { AdoptCardWrapper, AdoptCardTitle, DeleteButton } from './style'
 
-interface AdoptDog {
+interface AdoptCard {
+    deleteFunction: () => void;
     adoptImage: string;
     adoptName: string;
-    index: number;
-    deleteFunction: any;
+    index?: number;
 }
 
-const AdoptCard: React.FC<AdoptDog> = ({adoptImage, adoptName, index, deleteFunction}) => {
+const AdoptCard: React.FC<AdoptCard> = ({deleteFunction, adoptImage, adoptName, index}) => {
     return (
         <AdoptCardWrapper key={index}>
             <Image 
@@ -25,4 +25,4 @@ const AdoptCard: React.FC<AdoptDog> = ({adoptImage, adoptName, index, deleteFunc
     )
 }
 
-export default AdoptCard
+export default AdoptCard;
