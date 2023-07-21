@@ -62,6 +62,7 @@ const DogDetails: React.FC<Dog> = () => {
         const isDuplicate = items.some((item: any) => JSON.stringify(item) === JSON.stringify(dataToSave));
 
         localStorage.setItem('Dog ' + id, `{"breed": "${dog?.name}", "image": "${dog?.image}", "id": "${dog?.id}"}`)
+        localStorage.setItem('CartLength', items.length)
 
         if (!isDuplicate) {
             const updatedItems = [...items, dataToSave];
