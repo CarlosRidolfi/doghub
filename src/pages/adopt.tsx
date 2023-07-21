@@ -3,6 +3,8 @@ import Layout from '@/app/layout';
 import AdoptCard from '@/components/adoptcard';
 import { AdoptList } from '@/components/adoptcard/style';
 import { DogListTitle } from '@/components/doglist/style';
+import '../app/globals.css';
+import Navbar from '@/components/navbar';
 
 interface AdoptDog {
     id: number;
@@ -34,13 +36,14 @@ export default function Adopt() {
     }
 
     return (
-        <Layout>
+        <>
+            <Navbar reRender={adoptDogs.length}/>
             <AdoptList>
                 <DogListTitle>Sua lista de adoção</DogListTitle>
                 {adoptDogs.map((dog, index) => (
                     <AdoptCard deleteFunction={() => deleteFunction(index)} key={index} adoptImage={dog.image} adoptName={dog.breed} />
                 ))}
             </AdoptList>
-        </Layout>
+        </>
     );
 }
