@@ -16,7 +16,7 @@ export default function Layout({
       <Head>
         <title>DogHub</title>
       </Head>
-      <Navbar reRender={null}/>
+      <Navbar />
       {children}
     </div>
   )
