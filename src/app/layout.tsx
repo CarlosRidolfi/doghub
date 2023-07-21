@@ -8,10 +8,11 @@ import React, { useEffect, useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Layout({children,}: {children: React.ReactNode}) {
-  const [cartLength, setCartLength] = useState<string | null>(null);
+  const [cartLength, setCartLength] = useState([]);
 
   useEffect(() => {
-    setCartLength(localStorage.getItem('CartLength'))
+    const storedItems = localStorage.getItem('myItemsKey');
+    setCartLength(storedItems ? JSON.parse(storedItems) : [])
   }, [])
 
   return (
@@ -19,7 +20,7 @@ export default function Layout({children,}: {children: React.ReactNode}) {
       <Head>
         <title>DogHub</title>
       </Head>
-      <Navbar reRender={cartLength}/>
+      <Navbar reRender={cartLength.length}/>
       {children}
     </div>
   )
