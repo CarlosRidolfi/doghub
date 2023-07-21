@@ -15,6 +15,7 @@ interface DogCardProps {
     heightimperial?: string;
     weightmetric?: string;
     heightmetric?: string;
+    adoptFunction?: any;
 }
 
 const DogCard: React.FC<DogCardProps> = ({
@@ -29,6 +30,7 @@ const DogCard: React.FC<DogCardProps> = ({
     weightmetric,
     heightimperial,
     heightmetric,
+    adoptFunction
 }) => {
     const [items, setItems] = useState<any>(() => {
         const storedItems = localStorage.getItem('myItemsKey');
@@ -70,7 +72,7 @@ const DogCard: React.FC<DogCardProps> = ({
                             <li>Height Imperial: {heightimperial}</li>
                             <li>Weight Metric: {weightmetric}</li>
                             <li>Height Metric: {heightmetric}</li>
-                            <AdoptButton onClick={handleSaveData}>ADOTAR</AdoptButton>
+                            <AdoptButton onClick={adoptFunction}>ADOTAR</AdoptButton>
                         </DogDetailsList>
                     )
                 }
