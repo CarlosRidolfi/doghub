@@ -7,6 +7,7 @@ interface AdoptDog {
     adoptImage: string;
     adoptName: string;
     index: number;
+    deleteFunction: any;
 }
 
 const AdoptCard: React.FC<AdoptDog> = ({adoptImage, adoptName, index, deleteFunction}) => {
