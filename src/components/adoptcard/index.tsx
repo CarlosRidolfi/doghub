@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import CloseIcon from '@mui/icons-material/Close';
-import { AdoptCardWrapper, AdoptCardTitle, DeleteButton } from './style'
+import { AdoptCardWrapper, AdoptCardTitle, DeleteButton } from './style';
 
 interface AdoptCard {
     deleteFunction: () => void;
@@ -10,7 +10,7 @@ interface AdoptCard {
     index?: number;
 }
 
-const AdoptCard: React.FC<AdoptCard> = ({deleteFunction, adoptImage, adoptName, index}) => {
+const AdoptCard: React.FC<AdoptCard> = ({ deleteFunction, adoptImage, adoptName, index }) => {
     return (
         <AdoptCardWrapper key={index}>
             <Image 

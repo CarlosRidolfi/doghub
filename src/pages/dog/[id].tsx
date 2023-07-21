@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-import '../../app/globals.css'
+import '../../app/globals.css';
 import DogCard from '@/components/dogcard';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { DogListTitle } from '@/components/doglist/style';
 import Navbar from '@/components/navbar';
 

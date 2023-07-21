@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import DogCard from '../dogcard'
-import Dog from '../../../public/images/16.jpg'
-import Link from 'next/link'
-import { DogListContainer, DogListTitle, DogListWrapper } from './style'
+import React, { useEffect, useState } from 'react';
+import DogCard from '../dogcard';
+import Dog from '../../../public/images/16.jpg';
+import Link from 'next/link';
+import { DogListContainer, DogListTitle, DogListWrapper } from './style';
 
 interface Dog {
     id: number;

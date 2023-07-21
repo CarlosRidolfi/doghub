@@ -16,8 +16,6 @@ interface AdoptDog {
 export default function Adopt() {
     const [adoptDogs, setAdoptDogs] = useState<AdoptDog[]>([]);
 
-    console.log(adoptDogs)
-
     useEffect(() => {
         const fetchAdoptListFromLocalStorage = (): AdoptDog[] => {
             const storedList = localStorage.getItem('myItemsKey');
@@ -27,8 +25,6 @@ export default function Adopt() {
         setAdoptDogs(fetchAdoptListFromLocalStorage);
     }, []);
 
-    console.log(adoptDogs)
-
     const deleteFunction = (index: number) => {
         const updatedAdoptDogs = [...adoptDogs];
         updatedAdoptDogs.splice(index, 1); 
@@ -36,7 +32,6 @@ export default function Adopt() {
 
         localStorage.setItem('myItemsKey', JSON.stringify(updatedAdoptDogs));
     }
-    console.log(adoptDogs)
 
     return (
         <Layout>

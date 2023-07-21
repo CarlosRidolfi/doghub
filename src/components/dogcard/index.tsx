@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { CardTitle, ButtonsWrapper, CardButton, DogDetailsList, AdoptButton, CardContainer } from './style';
@@ -32,24 +32,6 @@ const DogCard: React.FC<DogCardProps> = ({
     heightmetric,
     adoptFunction
 }) => {
-    const [items, setItems] = useState<any>(() => {
-        const storedItems = localStorage.getItem('myItemsKey');
-        return storedItems ? JSON.parse(storedItems) : [];
-    });
-
-    const handleSaveData = () => {
-        const dataToSave = {breed: dogBreed, image: dogImage, id: id};
-        const isDuplicate = items.some((item: any) => JSON.stringify(item) === JSON.stringify(dataToSave));
-
-        localStorage.setItem('Dog ' + id, `{"breed": "${dogBreed}", "image": "${dogImage}", "id": "${id}"}`)
-
-        if (!isDuplicate) {
-            const updatedItems = [...items, dataToSave];
-            localStorage.setItem('myItemsKey', JSON.stringify(updatedItems));
-            setItems(updatedItems);
-        }
-    };
-
     return (
         <CardContainer>
             <Card sx={{ backgroundColor: '#ebeaea', borderRadius: '10px' }}>
