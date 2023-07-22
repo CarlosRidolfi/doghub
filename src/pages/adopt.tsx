@@ -4,6 +4,14 @@ import { AdoptList } from '@/components/adoptcard/style';
 import { DogListTitle } from '@/components/doglist/style';
 import '../app/globals.css';
 import Navbar from '@/components/navbar';
+import styled from 'styled-components';
+
+const EmptyAdoptionListMessage = styled.h2`
+    text-align: center;
+    font-family: 'Raleway';
+    font-size: 25px;
+    font-weight: 500;
+`
 
 interface AdoptDog {
     id: number;
@@ -41,7 +49,7 @@ export default function Adopt() {
                 <DogListTitle>Sua lista de adoção</DogListTitle>
                 {
                     adoptDogs.length === 0 &&
-                        <DogListTitle>Você não possui nenhum cão em sua lista de adoção</DogListTitle>
+                        <EmptyAdoptionListMessage>Você não possui nenhum cão em sua lista de adoção</EmptyAdoptionListMessage>
                 }
                 {adoptDogs.map((dog, index) => (
                     <AdoptCard deleteFunction={() => deleteFunction(index)} key={index} adoptImage={dog.image} adoptName={dog.breed} />
