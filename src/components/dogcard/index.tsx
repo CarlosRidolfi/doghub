@@ -19,7 +19,6 @@ interface DogCardProps {
 }
 
 const DogCard: React.FC<DogCardProps> = ({
-    id,
     dogImage,
     dogBreed,
     dogCaracteristics,

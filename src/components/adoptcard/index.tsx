@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import CloseIcon from '@mui/icons-material/Close';
 import { AdoptCardWrapper, AdoptCardTitle, DeleteButton } from './style';

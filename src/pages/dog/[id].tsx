@@ -37,7 +37,6 @@ const DogDetails: React.FC<Dog> = () => {
     const router = useRouter();
     const { id } = router.query;
     const [dog, setDog] = useState<Dog | undefined>();
-    const [key, setKey] = useState(0);
     const [items, setItems] = useState<any>([]);
 
     const fetchData = async () => {
