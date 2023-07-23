@@ -12,8 +12,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ reRender }) => {
     const router = useRouter();
     const actualUrl = router.asPath;
-    const [adoptDogs, setAdoptDogs] = useState<string[]>([]); // Defina o tipo adequado para o array.
-
+    const [adoptDogs, setAdoptDogs] = useState<string[]>([]);
     useEffect(() => {
         const fetchAdoptListFromLocalStorage = (): string[] => {
             const storedList = localStorage.getItem('myItemsKey');
@@ -21,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ reRender }) => {
         };
 
         setAdoptDogs(fetchAdoptListFromLocalStorage);
-    }, [reRender]); // Atualize o estado quando a prop "reRender" for alterada.
+    }, [reRender]);
 
     return (
         <NavbarWrapper>
