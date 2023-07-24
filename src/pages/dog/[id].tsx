@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import '../../app/globals.css';
 import DogCard from '@/components/dogcard';
-import styled from 'styled-components';
+import { DogDetailsWrapper } from './style'
 import { DogListTitle } from '@/components/doglist/style';
 import Navbar from '@/components/navbar';
 
@@ -23,15 +23,6 @@ interface Dog {
     height: DogWeightHeight[];
     dogCaracteristics?: any;
 }
-
-const DogDetailsWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-`
 
 const DogDetails: React.FC<Dog> = () => {
     const router = useRouter();
