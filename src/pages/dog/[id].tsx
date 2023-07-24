@@ -39,15 +39,17 @@ const DogDetails: React.FC<Dog> = () => {
     const [dog, setDog] = useState<Dog | undefined>();
     const [items, setItems] = useState<any>([]);
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('/json/breeds.json');
-            const data = await response.json();
-            const dogSelected = data.find((dog: Dog) => dog.id === parseInt(id as string));
-            setDog(dogSelected);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+    const fetchData = () => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                const data = JSON.parse(this.responseText);
+                const dogSelected = data.find((dog: Dog) => dog.id === parseInt(id as string));
+                setDog(dogSelected);
+            }
+        };
+        xhttp.open("GET", '/json/breeds.json', true);
+        xhttp.send();
     };
 
     useEffect(() => {

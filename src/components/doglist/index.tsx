@@ -14,14 +14,16 @@ interface Dog {
 const DogList: React.FC = () => {
     const [dogs, setDogs] = useState<Dog[]>([]);
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('/json/breeds.json');
-            const data = await response.json();
-            setDogs(data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+    const fetchData = () => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                const data = JSON.parse(this.responseText);
+                setDogs(data);
+            }
+        };
+        xhttp.open("GET", '/json/breeds.json', true);
+        xhttp.send();
     };
 
     useEffect(() => {
